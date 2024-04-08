@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Typography } from '@material-tailwind/react';
+import React, { useEffect } from 'react';
+import { Button } from '@material-tailwind/react';
 
 function App() {
-  const [data, setData] = useState(''); // Inicializa o estado com uma string vazia
-
   useEffect(() => {
     window.api.receive('createKartResponse', (response) => {
       if (response.success) {
@@ -18,8 +16,6 @@ function App() {
       window.api.clear('createKartResponse');
     };
   }, []); // Dependências vazias significam que isso acontecerá no montar e desmontar
-
-  // Em App.jsx ou onde o botão é definido
 
   function handleClick() {
     const novoKart = {
@@ -41,7 +37,6 @@ function App() {
         <Button variant="filled" color='amber' onClick={handleClick}>Enviar</Button>
       </div>
       <div>
-        <Typography color='white'>Dados recebidos do backend: {data}</Typography>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "electron": "electron ./electron/main.js",
     "dev": "concurrently \"npm start\" \"npm run electron\""
@@ -43,6 +43,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "electron": "^29.2.0"
   }
 }
